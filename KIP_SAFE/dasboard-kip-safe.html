@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Klinik KBS</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="bg-gray-100 p-5">
+
+    <div class="container mx-auto">
+
+        <!-- Judul Dashboard -->
+        <h1 class="text-2xl font-bold mb-6">Dashboard Klinik KBS</h1>
+
+        <!-- Kondisi Alat -->
+        <div class="bg-white shadow-md rounded-lg p-6 mb-6">
+            <h2 class="text-xl font-semibold mb-4">Kondisi Alat</h2>
+            <div id="equipmentStatus"></div>
+        </div>
+
+        <!-- Grafik Kunjungan Pasien -->
+        <div class="bg-white shadow-md rounded-lg p-6 mb-6">
+            <h2 class="text-xl font-semibold mb-4">Kunjungan Pasien ke Klinik</h2>
+            <canvas id="patientVisitsChart"></canvas>
+        </div>
+
+        <!-- Tabel Penggunaan Obat Berdasarkan Merk -->
+        <div class="bg-white shadow-md rounded-lg p-6">
+            <h2 class="text-xl font-semibold mb-4">Penggunaan Obat</h2>
+            <table class="min-w-full bg-white">
+                <thead>
+                    <tr class="w-full bg-gray-200 border-b-2 border-gray-300">
+                        <th class="py-2 px-4 text-left">No</th>
+                        <th class="py-2 px-4 text-left">Nama Obat</th>
+                        <th class="py-2 px-4 text-left">Jumlah Penggunaan</th>
+                        <th class="py-2 px-4 text-left">Tersedia?</th>
+                    </tr>
+                </thead>
+                <tbody id="medicationUsageTable"></tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <script>
+        // Ambil data kondisi alat dari backend
+        fetch('api/equipment_status.php') // Ganti dengan endpoint yang sesuai
+            .then(response => response.json())
+            .then(data => {
+                const equipmentStatusDiv = document.getElementById('equipmentStatus');
+                let html = '<ul>';
+                data.forEach(item => {
+                    html += `
+                        <li class="flex justify-between border-b py-2">
+                            <span>${item.name}</span>
+                            <span class="${item.condition === 'Baik' ? 'text-green-500' : item.condition === 'Perlu Perawatan' ? 'text-yellow-500' : 'text-red-500'}">${item.condition}</span>
+                        </li>
+                    `;
+                });
+                html += '</ul>';
+                equipmentStatusDiv.innerHTML = html;
+            })
+            .catch(error => {
+                console.error('Error fetching equipment status:', error);
+            });
+
+        // Ambil data penggunaan obat dari backend
+        fetch('api/medication_usage.php') // Ganti dengan endpoint yang sesuai
+            .then(response => response.json())
+            .then(data => {
+                const medicationUsageTable = document.getElementById('medicationUsageTable');
+                let html = '';
+                data.forEach(item => {
+                    html += `
+                        <tr class="border-b">
+                            <td class="py-2 px-4">${item.name}</td>
+                            <td class="py-2 px-4">${item.usage}</td>
+                        </tr>
+                    `;
+                });
+                medicationUsageTable.innerHTML = html;
+            })
+            .catch(error => {
+                console.error('Error fetching medication usage:', error);
+            });
+
+        // Grafik Kunjungan Pasien
+        const ctx1 = document.getElementById('patientVisitsChart').getContext('2d');
+        const patientVisitsChart = new Chart(ctx1, {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul'],
+                datasets: [{
+                    label: 'Kunjungan Pasien',
+                    data: [120, 150, 170, 200, 190, 220, 250],
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    fill: true,
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>
