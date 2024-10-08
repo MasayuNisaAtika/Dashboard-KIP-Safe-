@@ -6,86 +6,6 @@
     <title>Dashboard Klinik KBS</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-    <style>
-        body {
-       font-family: Arial, sans-serif;
-       margin: 0;
-       padding: 0;
-       display: flex;
-       }
-   
-       .main {
-           display: flex;
-       }
-      
-       .content {
-       width: 500px;
-       padding: 20px;
-           
-       }
-       .content a {
-           display: block;
-       padding: 10px;
-       text-decoration: none;
-       color: black;
-       margin-bottom: 10px;
-       }
-       
-       .header {
-       margin-bottom: 20px;
-       }
-       .header h1 {
-           margin: 0;
-           font-size: 24px;
-       
-       }
-       
-           .cards {
-           display: flex;
-           gap: 20px;
-       }
-   
-       .cardbaik {
-           flex: 1;
-           padding: 20px;
-           background-color: #fff;
-           border: 1px solid #67f806;
-           box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-           text-align: center;
-       }
-       
-       .card {
-           flex: 1;
-           padding: 20px;
-           background-color: #fff;
-           border: 1px solid #c21004;
-           box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-           text-align: center;
-       }
-       
-       .card h2 {
-           margin: 0;
-           font-size: 18px;
-           font-weight: normal;
-       }
-       .card h1 {
-        margin: 0;
-        font-size: 50px;
-        font-weight: normal;
-       }
-       .cardbaik h2 {
-           margin: 0;
-           font-size: 18px;
-           font-weight: normal;
-       }
-       .cardbaik h1 {
-        margin: 0;
-        font-size: 50px;
-        font-weight: normal;
-       }
-
-       </style>
 </head>
 <body class="bg-gray-100 p-5">
 
@@ -95,20 +15,20 @@
         <h1 class="text-2xl font-bold mb-6">Dashboard Klinik KBS</h1>
 
         <!-- Kondisi Alat -->
-        <div class="bg-white shadow-md rounded-lg p-6 mb-6">
+        <section class="bg-white shadow-md rounded-lg p-6 mb-6">
             <h2 class="text-xl font-semibold mb-4">Kondisi Alat</h2>
-            <div id="equipmentStatus"></div>
-            <div class="cards">
-                <div class="cardbaik">
-                    <h1>90</h1>
-                    <h2>Kondisi Baik</h2>
-                </div>
-                <div class="card">
-                    <h1>10</h1>
-                    <h2>Kondisi Tidak Baik</h2>
-                </div>
-            </div> 	
-        </div>
+            <div id="equipmentStatus" aria-live="polite"></div>
+            <div class="flex gap-4">
+                <a href="hal_kondisi_baik.html" class="flex-1 p-4  border border-green-400 text-center rounded-lg shadow hover:bg-green-200 transition">
+                    <h1 class="text-5xl font-normal">90</h1>
+                    <h2 class="text-lg">Kondisi Baik</h2>
+                </a>
+                <a href="hal_kondisi_tidak_baik.html" class="flex-1 p-4  border border-red-400 text-center rounded-lg shadow hover:bg-red-200 transition">
+                    <h1 class="text-5xl font-normal">10</h1>
+                    <h2 class="text-lg">Kondisi Tidak Baik</h2>
+                </a>
+            </div>
+        </section>
         
 
         <!-- Grafik Kunjungan Pasien -->
