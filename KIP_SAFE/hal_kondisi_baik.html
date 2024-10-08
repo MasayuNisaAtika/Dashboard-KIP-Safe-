@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Klinik KBS</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 p-5">
+
+<div class="w-full mt-12">
+    <p class="text-xl pb-3 flex items-center">
+        <i class="fas fa-list mr-3"></i> Tabel Kondisi Alat
+    </p>
+    <div class="bg-white overflow-auto shadow-md rounded-lg">
+        <table class="min-w-full">
+            <thead class="bg-gray-800 text-white">
+                <tr>
+                    <th class="w-1/2 text-left py-3 px-4 uppercase font-semibold text-sm">Nama Alat</th>
+                    <th class="w-1/4 text-left py-3 px-4 uppercase font-semibold text-sm">Kondisi</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="bg-gray-200">
+                    <td class="w-1/2 text-left py-3 px-4">STETOSCOPE</td>
+                    <td class="text-left py-3 px-4 text-green-500">Baik</td>
+                </tr>
+                
+                <tr class="bg-gray-200">
+                    <td class="w-1/2 text-left py-3 px-4">TENSIMETER DIGITAL</td>
+                    <td class="text-left py-3 px-4 text-green-500">Baik</td>
+                </tr>
+
+                <tr class="bg-gray-200">
+                    <td class="w-1/2 text-left py-3 px-4">THT SET</td>
+                    <td class="text-left py-3 px-4 text-green-500">Baik</td>
+                </tr>
+
+                <tr class="bg-gray-200">
+                    <td class="w-1/2 text-left py-3 px-4">PINSET PANJANG (THT) 2PCS</td>
+                    <td class="text-left py-3 px-4 text-green-500">Baik</td>
+                </tr>
+
+                <tr class="bg-gray-200">
+                    <td class="w-1/2 text-left py-3 px-4">SPEKULUM HIDUNG 2PCS</td>
+                    <td class="text-left py-3 px-4 text-green-500">Baik</td>
+                </tr>
+
+                <tr class="bg-gray-200">
+                    <td class="w-1/2 text-left py-3 px-4">EKSTRAKTOR BENDA ASING MATA</td>
+                    <td class="text-left py-3 px-4 text-green-500">Baik</td>
+                </tr>
+
+                <tr class="bg-gray-200">
+                    <td class="w-1/2 text-left py-3 px-4">HEAD LAMP</td>
+                    <td class="text-left py-3 px-4 text-green-500">Baik</td>
+                </tr>
+
+                <tr class="bg-gray-200">
+                    <td class="w-1/2 text-left py-3 px-4">COLLAR NECK UKURAN BESAR</td>
+                    <td class="text-left py-3 px-4 text-green-500">Baik</td>
+                </tr>
+
+                <tr class="bg-gray-200">
+                    <td class="w-1/2 text-left py-3 px-4">LONG SPIN BOARD</td>
+                    <td class="text-left py-3 px-4 text-green-500">Baik</td>
+                </tr>
+
+                <tr class="bg-gray-200">
+                    <td class="w-1/2 text-left py-3 px-4">SHORT SPIN BOARD</td>
+                    <td class="text-left py-3 px-4 text-green-500">Baik</td>
+                </tr>
+
+                <tr class="bg-gray-200">
+                    <td class="w-1/2 text-left py-3 px-4">SPALK UKURAN PENDEK 5PCS</td>
+                    <td class="text-left py-3 px-4 text-green-500">Baik</td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<td class="text-left py-3 px-4">
+    <button class="bg-red-500 text-white py-1 px-3 rounded mt-12 text-center"><a href="dasboard-kip-safe.html">Kembali ke Dashboard</a></button>
+</td>
+
+<script>
+    document.querySelectorAll('button').forEach(button => {
+        button.addEventListener('click', function() {
+            const action = this.innerText;
+            alert(`Apakah Anda Yakin Akan: ${action}`);
+        });
+    });
+</script>
+
+</body>
+</html>
