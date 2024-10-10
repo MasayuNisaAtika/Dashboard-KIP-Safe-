@@ -12,19 +12,20 @@
     <div class="bg-blue-600 p-4 text-white flex justify-between items-center">
         <h1 class="text-2xl font-bold">KIP SAFE</h1>
         <ul class="flex space-x-4">
-            <li><a href="#" onclick="loadHome()" class="hover:underline">Home</a></li>
-            <li><a href="#" onclick="loadDashboard()" class="hover:underline">Dashboard</a></li>
+            <li><a href="index.php" onclick="loadHome()" class="hover:underline">Home</a></li>
+            <li><a href="dasboard-kip-safe.html" onclick="loadDashboard()" class="hover:underline">Dashboard</a></li>
             <li><a href="about.php" class="hover:underline">About</a></li>
             <li><a href="contact.php" class="hover:underline">Contact</a></li>
         </ul>
     </div>
-
+    </nav>
+<body>
     <div class="container mx-auto p-5" id="contentArea">
         <!-- Konten utama akan dimuat di sini -->
         <h1 class="text-2xl font-bold mb-6">Selamat Datang di KIP SAFE</h1>
         <p>Silakan pilih menu di atas untuk mulai.</p>
     </div>
-
+    </body>
     <script>
         function loadHome() {
             const contentArea = document.getElementById('contentArea');
@@ -41,9 +42,6 @@
                 <section class="bg-white shadow-md rounded-lg p-6 mb-6">
                     <h2 class="text-xl font-semibold mb-2">Kondisi Alat</h2>
                     <td class="text-left py-3 px-4">
-                        <button class="bg-blue-500 text-white py-1 px-3 rounded mb-2 text-center">
-                            <a href="insert_alat.html">Tambah Kondisi Data Alat</a>
-                        </button>
                     </td>
                     <div id="equipmentStatus" aria-live="polite"></div>
                     <div class="flex gap-4">
@@ -69,7 +67,6 @@
                                 <th class="py-2 px-4 text-left">No</th>
                                 <th class="py-2 px-4 text-left">Nama Obat</th>
                                 <th class="py-2 px-4 text-left">Jumlah Penggunaan</th>
-                                <th class="py-2 px-4 text-left">Aksi</th>
                             </tr>
                         </thead>
                         <tbody id="medicationUsageTable">
@@ -77,19 +74,11 @@
                                 <td class="py-2 px-4 text-left">1</td>
                                 <td class="py-2 px-4 text-left">Coba</td>
                                 <td class="py-2 px-4 text-left">10</td>
-                                <td class="py-2 px-4 text-left">
-                                    <a href="hal_edit.php" class="text-blue-500 hover:underline">Edit</a>
-                                    <button class="text-red-500 hover:underline" onclick="confirmDelete(1)">Hapus</button>
-                                </td>
                             </tr>
                             <tr>
                                 <td class="py-2 px-4 text-left">2</td>
                                 <td class="py-2 px-4 text-left">Coba 2</td>
                                 <td class="py-2 px-4 text-left">5</td>
-                                <td class="py-2 px-4 text-left">
-                                    <a href="hal_edit.php" class="text-blue-500 hover:underline">Edit</a>
-                                    <button class="text-red-500 hover:underline" onclick="confirmDelete(2)">Hapus</button>
-                                </td>
                             </tr>
                         </tbody>
                     </table>
