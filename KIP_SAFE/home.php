@@ -15,6 +15,7 @@
         }
     </style>
 </head>
+
 <body class="flex items-center justify-center">
     <div class="container mx-auto px-4 py-8">
         <div class="bg-white shadow-lg rounded-lg p-6">

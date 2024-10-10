@@ -12,7 +12,7 @@
     <div class="bg-blue-600 p-4 text-white flex justify-between items-center">
         <h1 class="text-2xl font-bold">KIP SAFE</h1>
         <ul class="flex space-x-4">
-            <li><a href="home.php" onclick="loadHome()" class="hover:underline">Home</a></li>
+        <li><a href="home.php" onclick="loadHome()" class="hover:underline">Home</a></li>
             <li><a href="dasboard-kip-safe.html" onclick="loadDashboard()" class="hover:underline">Dashboard</a></li>
             <li><a href="about.php" class="hover:underline">About</a></li>
             <li><a href="contact.php" class="hover:underline">Contact</a></li>

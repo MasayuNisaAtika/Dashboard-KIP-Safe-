@@ -11,7 +11,7 @@
     <div class="bg-blue-600 p-4 text-white flex justify-between items-center">
         <h1 class="text-2xl font-bold">KIP SAFE</h1>
         <ul class="flex space-x-4">
-            <li><a href="index.php" onclick="loadHome()" class="hover:underline">Home</a></li>
+            <li><a href="home.php" onclick="loadHome()" class="hover:underline">Home</a></li>
             <li><a href="dasboard-kip-safe.html" onclick="loadDashboard()" class="hover:underline">Dashboard</a></li>
             <li><a href="about.php" class="hover:underline">About</a></li>
             <li><a href="contact.php" class="hover:underline">Contact</a></li>
@@ -23,12 +23,12 @@
     <div class="container mx-auto px-4 py-8">
         <h1 class="text-4xl font-bold text-center text-black-600 mb-6">Krakatau International Port (KIP) Safe</h1>
         <div class="bg-white shadow-lg rounded-lg p-6">
-            <h2 class="text-lg text-gray-700 mb-4">
+            <h2 class="text-lg text-gray-700 mb-4 text-justify">
                 Krakatau International Port (KIP) Safe adalah inisiatif yang diterapkan di Pelabuhan Krakatau untuk meningkatkan standar keamanan dan keselamatan dalam operasional pelabuhan.
                 Program ini bertujuan untuk menciptakan lingkungan yang aman bagi semua aktivitas pelabuhan, termasuk pengangkutan barang dan lalu lintas kapal.
                 Dengan menerapkan berbagai langkah pengawasan dan sistem keamanan yang ketat, KIP Safe berupaya meminimalkan risiko kecelakaan serta ancaman terhadap keselamatan pekerja dan pengguna pelabuhan.
             </h2>
-            <h2 class="text-lg text-gray-700">
+            <h2 class="text-lg text-gray-700 text-justify">
                 Selain itu, KIP Safe juga melibatkan pelatihan bagi staf dan pengelola pelabuhan untuk memastikan bahwa semua pihak memahami prosedur keselamatan yang diperlukan.
                 Implementasi teknologi modern, seperti sistem pemantauan dan alarm, juga menjadi bagian integral dari program ini.
                 Dengan demikian, KIP Safe tidak hanya melindungi aset dan infrastruktur pelabuhan, tetapi juga mendukung kelancaran operasional serta meningkatkan kepercayaan pengguna jasa terhadap keselamatan di Krakatau International Port.
