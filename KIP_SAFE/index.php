@@ -6,34 +6,22 @@
     <title>KIP SAFE</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
+</head>
 <body class="bg-gray-100">
 
     <div class="bg-blue-600 p-4 text-white flex justify-between items-center">
         <h1 class="text-2xl font-bold">KIP SAFE</h1>
         <ul class="flex space-x-4">
-            <li><a href="index.php" onclick="loadHome()" class="hover:underline">Home</a></li>
+            <li><a href="home.php" onclick="loadHome()" class="hover:underline">Home</a></li>
             <li><a href="dasboard-kip-safe.html" onclick="loadDashboard()" class="hover:underline">Dashboard</a></li>
             <li><a href="about.php" class="hover:underline">About</a></li>
             <li><a href="contact.php" class="hover:underline">Contact</a></li>
         </ul>
     </div>
-    </nav>
-<body>
-    <div class="container mx-auto p-5" id="contentArea">
-        <!-- Konten utama akan dimuat di sini -->
-        <h1 class="text-2xl font-bold mb-6">Selamat Datang di KIP SAFE</h1>
-        <p>Silakan pilih menu di atas untuk mulai.</p>
-    </div>
-    </body>
+
     <script>
-        function loadHome() {
-            const contentArea = document.getElementById('contentArea');
-            contentArea.innerHTML = `
-                <h1 class="text-2xl font-bold mb-6">Selamat Datang di KIP SAFE</h1>
-                <p>Silakan pilih menu di atas untuk mulai.</p>
-            `;
-        }
+        // Panggil loadHome() saat halaman dimuat
+        window.onload = loadHome;
 
         function loadDashboard() {
             const contentArea = document.getElementById('contentArea');
@@ -41,8 +29,6 @@
                 <h1 class="text-2xl font-bold mb-6">Dashboard Klinik KBS</h1>
                 <section class="bg-white shadow-md rounded-lg p-6 mb-6">
                     <h2 class="text-xl font-semibold mb-2">Kondisi Alat</h2>
-                    <td class="text-left py-3 px-4">
-                    </td>
                     <div id="equipmentStatus" aria-live="polite"></div>
                     <div class="flex gap-4">
                         <a href="hal_kondisi_baik.html" class="flex-1 p-4 border border-green-400 text-center rounded-lg shadow hover:bg-green-200 transition">
@@ -131,6 +117,5 @@
             });
         }
     </script>
-</head>
 </body>
 </html>
